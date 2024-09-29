@@ -7,14 +7,13 @@ namespace HospitalManagementSys
 	public abstract class Person
 	{
 		public string Name { get; private set; }
-		public double Age { get; private set; }
+		public int Age { get; private set; }
 		public string Gender { get; private set; }
 
-		public Person(string name, DateTime DOB, string gender)
+		public Person(string name, int age, string gender)
 		{
 			Name = name;
-			TimeSpan timeSpan = DateTime.Today - DOB;
-			Age = timeSpan.TotalDays;
+			Age = age;
 			Gender = gender;
 		}
 
