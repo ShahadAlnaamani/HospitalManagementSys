@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Codeline user\\Desktop\\Projects\\HospitalManagementSys\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{395D2510-D856-4A75-9A9C-AA122540A25A}|HospitalManagementSys.csproj|c:\\users\\codeline user\\desktop\\projects\\hospitalmanagementsys\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{395D2510-D856-4A75-9A9C-AA122540A25A}|HospitalManagementSys.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Codeline user\\AppData\\Local\\Temp\\ab286efa-c88e-4d67-815f-4bb4b60d091c_OOP_Part3_Inhertance.zip.91c\\OOP_Part3_Inhertance\\SavingAccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Codeline user\\AppData\\Local\\Temp\\9a363eda-7d8a-4619-bdea-814885390fb4_OOP_Part3_Inhertance.zip.fb4\\OOP_Part3_Inhertance\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Codeline user\\AppData\\Local\\Temp\\d4e1a8b4-738b-4338-a93f-08be4baf76c0_OOP_Part3_Inhertance.zip.6c0\\OOP_Part3_Inhertance\\CurrentAccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Codeline user\\AppData\\Local\\Temp\\e849c928-b8b7-49da-8e72-7e3240240dc7_OOP_Part3_Inhertance.zip.dc7\\OOP_Part3_Inhertance\\BankAccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Codeline user\\Desktop\\Projects\\HospitalManagementSys\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Codeline user\\Desktop\\Projects\\HospitalManagementSys\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T10:53:11.61Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "202239ef-dbe2-46f1-90eb-c6a5f31a8fd3",
+        "Display": 0,
+        "X": 9,
+        "Y": 204,
+        "Width": 1521,
+        "Height": 783,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\9a363eda-7d8a-4619-bdea-814885390fb4_OOP_Part3_Inhertance.zip.fb4\\OOP_Part3_Inhertance\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\9a363eda-7d8a-4619-bdea-814885390fb4_OOP_Part3_Inhertance.zip.fb4\\OOP_Part3_Inhertance\\Program.cs",
+              "ToolTip": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\9a363eda-7d8a-4619-bdea-814885390fb4_OOP_Part3_Inhertance.zip.fb4\\OOP_Part3_Inhertance\\Program.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\9a363eda-7d8a-4619-bdea-814885390fb4_OOP_Part3_Inhertance.zip.fb4\\OOP_Part3_Inhertance\\Program.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T10:54:43.096Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SavingAccount.cs",
+              "DocumentMoniker": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\ab286efa-c88e-4d67-815f-4bb4b60d091c_OOP_Part3_Inhertance.zip.91c\\OOP_Part3_Inhertance\\SavingAccount.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\ab286efa-c88e-4d67-815f-4bb4b60d091c_OOP_Part3_Inhertance.zip.91c\\OOP_Part3_Inhertance\\SavingAccount.cs",
+              "ToolTip": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\ab286efa-c88e-4d67-815f-4bb4b60d091c_OOP_Part3_Inhertance.zip.91c\\OOP_Part3_Inhertance\\SavingAccount.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\ab286efa-c88e-4d67-815f-4bb4b60d091c_OOP_Part3_Inhertance.zip.91c\\OOP_Part3_Inhertance\\SavingAccount.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T10:55:10.634Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CurrentAccount.cs",
+              "DocumentMoniker": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\d4e1a8b4-738b-4338-a93f-08be4baf76c0_OOP_Part3_Inhertance.zip.6c0\\OOP_Part3_Inhertance\\CurrentAccount.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\d4e1a8b4-738b-4338-a93f-08be4baf76c0_OOP_Part3_Inhertance.zip.6c0\\OOP_Part3_Inhertance\\CurrentAccount.cs",
+              "ToolTip": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\d4e1a8b4-738b-4338-a93f-08be4baf76c0_OOP_Part3_Inhertance.zip.6c0\\OOP_Part3_Inhertance\\CurrentAccount.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\d4e1a8b4-738b-4338-a93f-08be4baf76c0_OOP_Part3_Inhertance.zip.6c0\\OOP_Part3_Inhertance\\CurrentAccount.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T10:55:02.82Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BankAccount.cs",
+              "DocumentMoniker": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\e849c928-b8b7-49da-8e72-7e3240240dc7_OOP_Part3_Inhertance.zip.dc7\\OOP_Part3_Inhertance\\BankAccount.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\e849c928-b8b7-49da-8e72-7e3240240dc7_OOP_Part3_Inhertance.zip.dc7\\OOP_Part3_Inhertance\\BankAccount.cs",
+              "ToolTip": "C:\\Users\\Codeline user\\AppData\\Local\\Temp\\e849c928-b8b7-49da-8e72-7e3240240dc7_OOP_Part3_Inhertance.zip.dc7\\OOP_Part3_Inhertance\\BankAccount.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\e849c928-b8b7-49da-8e72-7e3240240dc7_OOP_Part3_Inhertance.zip.dc7\\OOP_Part3_Inhertance\\BankAccount.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T10:54:57.884Z",
+              "EditorCaption": " [Read Only]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
