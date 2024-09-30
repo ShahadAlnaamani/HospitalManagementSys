@@ -34,7 +34,7 @@ namespace HospitalManagementSys
         {
             Console.WriteLine();
             base.DisplayInfo();
-            Console.WriteLine($"PatientID: {DoctorID}, Ailement {Specialization}\n");
+            Console.WriteLine($"Doctor ID: {DoctorID}, Specialization: {Specialization}\n");
         }
     }
 }

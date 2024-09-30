@@ -13,8 +13,6 @@ namespace HospitalManagementSys
             Doctor doctor2 = new Doctor(2, "Dr. Brown", 38, Gender.Female, "Neurology");
             Patient patient1 = new Patient(101, "John Doe", 30, Gender.Male, "Heart Disease", doctor1);
             Patient patient2 = new Patient(102, "Jane Roe", 28, Gender.Female, "Migraine", doctor2);
-
-
             // Display information
             patient1.DisplayInfo();
             patient2.DisplayInfo();
@@ -28,6 +26,8 @@ namespace HospitalManagementSys
             patient1.AssignRoom(room1);
             patient2.AssignRoom(room2);
             // Display room details
+            Console.WriteLine($"{patient1.Name} assigned to room {room1.RoomNumber}");
+            Console.WriteLine($"{patient2.Name} assigned to room {room2.RoomNumber}");
             Console.WriteLine($"Room {room1.RoomNumber} is occupied: {room1.IsOccupied}");
             Console.WriteLine($"Room {room2.RoomNumber} is occupied: {room2.IsOccupied}");
 

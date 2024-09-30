@@ -28,7 +28,7 @@ namespace HospitalManagementSys
         {
             Console.WriteLine();
             base.DisplayInfo();
-            Console.WriteLine($"PatientID: {PatientID}, Ailement {Ailement}, Doctor{AssignedDoctor}\n");
+            Console.WriteLine($"PatientID: {PatientID}, Ailement: {Ailement}, Doctor: {AssignedDoctor.Name}\n");
         }
 
         public void AssignRoom(Room room)
