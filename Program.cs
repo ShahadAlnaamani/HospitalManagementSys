@@ -7,6 +7,7 @@ namespace HospitalManagementSys
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(" - - - - - - - -C I T Y   H O S P I T A L- - - - - - - - ");
             // Test Case 1: Create doctors and patients
             Console.WriteLine("===== Test Case 1: Create Doctors and Patients =====");
             Doctor doctor1 = new Doctor(1, "Dr. Smith", 45, Gender.Male, "Cardiology");
