@@ -40,6 +40,16 @@ namespace HospitalManagementSys
             Appointment appointment2 = new Appointment(patient2, doctor2, new DateTime(2024, 10,6, 11, 0, 0));
             appointment2.ScheduleAppointment(new DateTime(2024, 10, 6, 11, 0, 0));
             appointment2.GetAppointmentDetails();
+
+            // Test Case 4: Discharge patients
+            Console.WriteLine("\n===== Test Case 4: Discharge Patients =====");
+            patient1.Discharge(patient1.AssignedRoom);
+            Console.WriteLine($"Patient {patient1.Name} has been discharged. Room {room1.RoomNumber} is now occupied: {room1.IsOccupied}");
+
+            // Test Case 5: Display doctor-patient details
+            Console.WriteLine("\n===== Test Case 5: Display Doctor-Patient Details =====");
+            doctor1.DisplayInfo();
+            doctor2.DisplayInfo();
         }
     }
 }
