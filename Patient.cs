@@ -3,19 +3,19 @@ using System.Globalization;
 
 namespace HospitalManagementSys
 {
-    public abstract class Patient : Person
+    public class Patient : Person
     {
         //Attributes 
         public int PatientID { get; private set; }
         public string Ailement {  get; private set; }
-        public string AssignedDoctor { get; private set; }
+        public Doctor AssignedDoctor { get; private set; }
         public Room ?AssignedRoom { get; set; }
 
 
 
 
         //Sending over required data to parent class 
-        public Patient(int pateintID, string name, int age, string gender, string ailment, string assignedDoctor) : base(name, age, gender)
+        public Patient(int pateintID, string name, int age, Gender gender, string ailment, Doctor assignedDoctor) : base(name, age, gender)
         {
             PatientID = pateintID;
             Ailement = ailment;

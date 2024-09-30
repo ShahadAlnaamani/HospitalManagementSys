@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace HospitalManagementSys
 {
-    public abstract class Doctor : Person
+    public class Doctor : Person
     {
         //Attributes
         public int DoctorID { get; private set; }
@@ -12,7 +12,7 @@ namespace HospitalManagementSys
         public List<Patient> PatientsList { get; private set; } 
 
         //Constructor
-        public Doctor(string name, int age, string gender, int doctorID, string specialization) : base(name, age, gender)
+        public Doctor(int doctorID, string name, int age, Gender gender, string specialization) : base(name, age, gender)
         {
             DoctorID = doctorID;
             Specialization = specialization;    

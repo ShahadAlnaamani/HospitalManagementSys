@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace HospitalManagementSys
 {
-    public abstract class Room
+    public class Room
     {
         //Attributes 
         public int RoomNumber { get; private set; }
@@ -19,6 +19,7 @@ namespace HospitalManagementSys
             RoomNumber = roomNumber;
             IsOccupied = isOccupied;
 
+            /*
             if (roomType.Trim().ToLower() == "general")
             {
                 r = RoomType.General;
@@ -32,7 +33,7 @@ namespace HospitalManagementSys
             else if (roomType.Trim().ToLower() == "operationtheater")
             {
                 r = RoomType.OperationTheater;
-            }
+            }*/
         }
 
 
