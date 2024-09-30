@@ -8,7 +8,7 @@ namespace HospitalManagementSys
 	{
 		public string Name { get; private set; }
 		public int Age { get; private set; }
-		//public string Gender { get; private set; }
+		
 		public enum Gender { Male, Female, Other}
         public Gender g { get; set; }
 
@@ -17,17 +17,6 @@ namespace HospitalManagementSys
 			Name = name;
 			Age = age;
 			g = gender;
-			/*
-			if (gender.Trim().ToLower() == "female")
-			{
-				g = Gender.Female;
-			}
-			else if (gender.Trim().ToLower() == "male")
-			{
-				g = Gender.Male;
-			}
-			else 
-			{ g = Gender.Other; }*/
         }
 
 		public virtual void DisplayInfo()
