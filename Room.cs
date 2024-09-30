@@ -14,10 +14,10 @@ namespace HospitalManagementSys
 
 
         //Constructor
-        public Room(int roomNumber, bool isOccupied, string roomType)
+        public Room(int roomNumber, RoomType roomType)
         {
             RoomNumber = roomNumber;
-            IsOccupied = isOccupied;
+            r = roomType;
 
             /*
             if (roomType.Trim().ToLower() == "general")
