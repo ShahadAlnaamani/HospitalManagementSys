@@ -31,6 +31,15 @@ namespace HospitalManagementSys
             Console.WriteLine($"Room {room1.RoomNumber} is occupied: {room1.IsOccupied}");
             Console.WriteLine($"Room {room2.RoomNumber} is occupied: {room2.IsOccupied}");
 
+
+            // Test Case 3: Schedule appointments
+            Console.WriteLine("\n===== Test Case 3: Schedule Appointments =====");
+            Appointment appointment1 = new Appointment(patient1, doctor1, new DateTime(2024, 10,5, 9, 30, 0));
+            appointment1.ScheduleAppointment(new DateTime(2024, 10, 5, 9, 30, 0));
+            appointment1.GetAppointmentDetails();
+            Appointment appointment2 = new Appointment(patient2, doctor2, new DateTime(2024, 10,6, 11, 0, 0));
+            appointment2.ScheduleAppointment(new DateTime(2024, 10, 6, 11, 0, 0));
+            appointment2.GetAppointmentDetails();
         }
     }
 }

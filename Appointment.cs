@@ -6,16 +6,17 @@ namespace HospitalManagementSys
     public class Appointment
     {
         //Attributes 
-        public string PatientName { get; private set; }
-        public string DoctorName { get; private set; }
+        public Patient CurrentPatient { get; private set; }
+        public Doctor CurrentDoctor { get; private set; }
         public DateTime? AppointmentDate { get; private set; }
 
 
         //Constructor
-        public Appointment(string patientName, string doctorName)
+        public Appointment(Patient patient, Doctor doctor, DateTime date)
         {
-            PatientName = patientName;
-            DoctorName = doctorName;
+            CurrentPatient = patient;
+            CurrentDoctor = doctor;
+            ScheduleAppointment(date);
         }
 
         //Methods 
@@ -31,7 +32,7 @@ namespace HospitalManagementSys
 
         public void GetAppointmentDetails()
         {
-            Console.WriteLine($"Patient Name: {PatientName} | Doctor Name: {DoctorName} | Date: {AppointmentDate}");
+            Console.WriteLine($"Patient Name: {CurrentPatient.Name} | Doctor Name: {CurrentDoctor.Name} | Date: {AppointmentDate}");
         }
     }
 }
