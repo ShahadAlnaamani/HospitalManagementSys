@@ -9,7 +9,7 @@ namespace HospitalManagementSys
         //Attributes
         public int DoctorID { get; private set; }
         public string Specialization { get; private set; }
-        public List<Patient> PatientsList { get; private set; } //list of patient ids
+        public List<Patient> PatientsList { get; private set; } 
 
         //Constructor
         public Doctor(string name, int age, string gender, int doctorID, string specialization) : base(name, age, gender)

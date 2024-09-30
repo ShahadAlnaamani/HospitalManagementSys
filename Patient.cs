@@ -6,14 +6,15 @@ namespace HospitalManagementSys
     public abstract class Patient : Person
     {
         //Attributes 
-        public string PatientID { get; private set; }
+        public int PatientID { get; private set; }
         public string Ailement {  get; private set; }
         public string AssignedDoctor { get; private set; }
+        public Room AssignedRoom { get; set; }
 
 
 
         //Sending over required data to parent class 
-        public Patient(string pateintID, string name, int age, string gender, string ailment, string assignedDoctor) : base(name, DOB, gender)
+        public Patient(int pateintID, string name, int age, string gender, string ailment, string assignedDoctor) : base(name, age, gender)
         {
             PatientID = pateintID;
             Ailement = ailment;
