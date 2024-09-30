@@ -34,11 +34,12 @@ namespace HospitalManagementSys
         public void AssignRoom(Room room)
         {
             room.OccupyRoom();
+            AssignedRoom = room;
         }
 
-        public void Discharge(Room room)
+        public void Discharge()
         {
-            room.VacateRoom();
+            AssignedRoom.VacateRoom();
             AssignedRoom = null;
         }
 
