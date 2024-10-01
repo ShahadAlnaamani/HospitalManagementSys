@@ -6,33 +6,39 @@ namespace HospitalManagementSys
     public class Appointment
     {
         //Attributes 
-        public Patient CurrentPatient { get; private set; }
+        public Patient Patient { get; private set; }
         public Doctor CurrentDoctor { get; private set; }
         public DateTime? AppointmentDate { get; private set; }
+        public TimeSpan? AppointmentTime { get; private set; }
+        public bool IsBooked { get; private set; }
 
 
         //Constructor
-        public Appointment(Patient patient, Doctor doctor, DateTime date)
+        public Appointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
         {
-            CurrentPatient = patient;
+            Patient = patient;
             CurrentDoctor = doctor;
-            ScheduleAppointment(date);
+            ScheduleAppointment(appointmentDate, appointmentTime);
         }
 
         //Methods 
-        public void ScheduleAppointment(DateTime date)
+        public void ScheduleAppointment(DateTime appointmentDate, TimeSpan appointmentTime)
         {
-            AppointmentDate = date;
+            AppointmentDate = appointmentDate;
+            AppointmentTime = appointmentTime;
+            Console.WriteLine($"<!>Appointment scheduled for {appointmentDate} at {appointmentTime}<!>");
         }
 
         public void CancelAppointment()
         {
             AppointmentDate = null;
+            AppointmentTime = null;
+            Console.WriteLine($"<!>Appointment for patient {this.Patient.Name} cancelled<!>");
         }
 
         public void GetAppointmentDetails()
         {
-            Console.WriteLine($"Patient Name: {CurrentPatient.Name} | Doctor Name: {CurrentDoctor.Name} | Date: {AppointmentDate}");
+            Console.WriteLine($"Patient Name: {Patient.Name} | Date: {AppointmentDate} | Time: {AppointmentTime}");
         }
     }
 }

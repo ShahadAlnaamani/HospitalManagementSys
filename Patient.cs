@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace HospitalManagementSys
 {
-    public class Patient : Person
+    public abstract class Patient : Person
     {
         //Attributes 
         public int PatientID { get; private set; }

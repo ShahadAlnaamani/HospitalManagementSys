@@ -19,15 +19,35 @@ namespace HospitalManagementSys
 
 
 		//Constructor 
-		public Clinic(int clinicID, string clinicName, Specialization specialization)
+		public Clinic(int clinicID, string clinicName, Specialization specialization, Appointment a)
 		{
 			RoomsList = new List<Room>();
             ClinicID = clinicID;
 			ClinicName = clinicName;
 			s = specialization;
+			AvailableAppointments = new Dictionary<Doctor, List<Appointment>>();	
+
+        }
+
+
+        //Methods
+        public void AddRoom(Room room) 
+		{
+			RoomsList.Add(room);
 		}
 
+		public void AddAvailableAppointment(Doctor doctor, DateTime appointmentDay, TimeSpan period, double TotalTime)
+		{
+			Appointment appointment;
+			appointment.ScheduleAppointment(appointmentDay, period);
+        }
 
-		//Methods
-	}
+
+		public void BookAppointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
+		{
+			//remove available appointment 
+
+			//add update appointment 
+		}
+    }
 }

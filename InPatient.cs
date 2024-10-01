@@ -26,11 +26,13 @@ namespace HospitalManagementSys
         {
             room.OccupyRoom();
             AssignedRoom = room;
+            Console.WriteLine($"<!>Patient {Name} booked room {room.RoomNumber}<!>");
         }
 
         public void Discharge()
         {
             AssignedRoom.VacateRoom();
+            Console.WriteLine($"<!>Patient {Name} vacated room {AssignedRoom.RoomNumber}<!>");
             AssignedRoom = null;
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace HospitalManagementSys
 {
@@ -8,7 +9,7 @@ namespace HospitalManagementSys
         //Attributes 
         public int RoomNumber { get; private set; }
         public bool IsOccupied { get; private set; }
-        public enum RoomType {General, ICU, OperationTheater }
+        public enum RoomType {IR, OPR}
         public RoomType r { get; private set; }
 
 
@@ -32,7 +33,8 @@ namespace HospitalManagementSys
 
             else
             {
-                IsOccupied = true; 
+                IsOccupied = true;
+                Console.WriteLine($"<!>Room {RoomNumber} booked<!>");
             }
         }
 
@@ -46,8 +48,14 @@ namespace HospitalManagementSys
             else
             {
                 IsOccupied = false;
+                Console.WriteLine($"<!>Room {RoomNumber} now available<!>");
             }
         }
-    
+
+        public virtual void DisplayRoomInfo()
+        {
+            Console.WriteLine($"Room Number: {RoomNumber} | Room Type: {r} | Is occupied: {IsOccupied}");
+        }
+
     }
 }

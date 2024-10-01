@@ -7,6 +7,7 @@ namespace HospitalManagementSys
     {
         //Attributes 
         public Clinic ClinicAssigned { get; private set; }
+        public List<Appointment> Appointments { get; private set; }
 
         //Constructor
         public OutPatient(int pateintID, string name, int age, Gender gender, Clinic clinic) : base(pateintID, name, age, gender)
@@ -19,8 +20,14 @@ namespace HospitalManagementSys
         {
             Console.WriteLine();
             base.DisplayInfo();
-            //Add Appointment details 
-            Console.Write($" | Illness:  | Doctor:  | Room \n");
+            foreach (Appointment appointment in Appointments)
+            {
+                if (appointment.AppointmentDate > DateTime.Now)
+                {
+                    Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.AppointmentTime} | Doctor: {appointment.CurrentDoctor}");
+                }
+            }
+
         }
     }
 }
