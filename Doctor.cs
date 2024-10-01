@@ -48,7 +48,7 @@ namespace HospitalManagementSys
             
             foreach (Clinic c in AssignedClinics)
             {
-                Console.WriteLine($"Clinic ID: {c.ClinicID}, Clinic Name: {c.ClinicName}, Clinic Specialization: {c.Specialization}\n");
+                Console.WriteLine($"Clinic ID: {c.ClinicID}, Clinic Name: {c.ClinicName}, Clinic Specialization: {c.s}\n");
             }
             Console.WriteLine("\n- - - - - - - - - - - - - - - - - - - - - -");
 

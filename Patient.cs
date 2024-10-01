@@ -7,19 +7,20 @@ namespace HospitalManagementSys
     {
         //Attributes 
         public int PatientID { get; private set; }
-        public string Ailement {  get; private set; }
-        public Doctor AssignedDoctor { get; private set; }
-        public Room ?AssignedRoom { get; set; }
+        //**********public string Ailement {  get; private set; }
+        //**************public Doctor AssignedDoctor { get; private set; }
+        //*************public Room ?AssignedRoom { get; set; }
 
 
 
 
         //Sending over required data to parent class 
-        public Patient(int pateintID, string name, int age, Gender gender, string ailment, Doctor assignedDoctor) : base(name, age, gender)
+        public Patient(int pateintID, string name, int age, Gender gender) : base(name, age, gender)
         {
+            //*****(, string ailment, Doctor assignedDoctor)
             PatientID = pateintID;
-            Ailement = ailment;
-            AssignedDoctor = assignedDoctor;
+            //*********Ailement = ailment;
+           //***** AssignedDoctor = assignedDoctor;
         }
 
 
@@ -28,9 +29,10 @@ namespace HospitalManagementSys
         {
             Console.WriteLine();
             base.DisplayInfo();
-            Console.WriteLine($"PatientID: {PatientID}, Ailement: {Ailement}, Doctor: {AssignedDoctor.Name}\n");
+            Console.Write($"\nPatientID: {PatientID}, Patient Name: {Name} ");
         }
 
+        /************
         public void AssignRoom(Room room)
         {
             room.OccupyRoom();
@@ -44,6 +46,6 @@ namespace HospitalManagementSys
         }
 
 
-
+        *************/
     }
 }

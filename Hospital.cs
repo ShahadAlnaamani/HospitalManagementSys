@@ -36,7 +36,7 @@ namespace HospitalManagementSys
             }
 
             room.OccupyRoom();
-            patient.AssignedRoom = room;
+            patient.Assignedroom = room; // will have to change depending in/out patient 
         }
 
         public void GetDoctorPatients(Doctor doctor)
