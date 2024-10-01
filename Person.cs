@@ -10,7 +10,7 @@ namespace HospitalManagementSys
 		public int Age { get; private set; }
 		
 		public enum Gender { Male, Female, Other}
-        public Gender g { get; set; }
+        public Gender g { get; private set; }
 
         public Person(string name, int age ,Gender gender)
         {

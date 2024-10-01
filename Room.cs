@@ -18,22 +18,6 @@ namespace HospitalManagementSys
         {
             RoomNumber = roomNumber;
             r = roomType;
-
-            /*
-            if (roomType.Trim().ToLower() == "general")
-            {
-                r = RoomType.General;
-            }
-
-            else if (roomType.Trim().ToLower() == "icu")
-            {
-                r = RoomType.ICU;
-            }
-
-            else if (roomType.Trim().ToLower() == "operationtheater")
-            {
-                r = RoomType.OperationTheater;
-            }*/
         }
 
 
