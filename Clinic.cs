@@ -9,7 +9,7 @@ namespace HospitalManagementSys
 		public int ClinicID { get; private set; }
 
         public string ClinicName { get; private set; }
-        public double TotalHours { get; private set; }
+       // public double TotalHours { get; private set; }
 
         public enum Specializations {Cardiology, Neurology, Dermatology }
         public Specializations s { get; private set; }
@@ -38,11 +38,11 @@ namespace HospitalManagementSys
 			RoomsList.Add(room);
 		}
 
-		public void AddAvailableAppointment(Patient patient, Doctor doctor, DateTime appointmentDay, TimeSpan period, double TotalTime)
-		{
+		public void AddAvailableAppointment(Patient patient, Doctor doctor, DateTime appointmentDay, TimeSpan period ) //double TotalTime
+        {
 			Appointment appointment = new Appointment(patient, doctor, appointmentDay, period);
 			appointment.ScheduleAppointment(appointmentDay, period, false);
-			TotalHours = TotalTime;
+			//TotalHours = TotalTime;
 
 			if (AvailableAppointments.ContainsKey(doctor))
 			{
@@ -88,13 +88,13 @@ namespace HospitalManagementSys
 		{
 			foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
 			{
-				
-                Console.WriteLine($"\n\nD O C T O R - {line.Key}:");
+			
+                Console.WriteLine($"\n\nD O C T O R - {line.Key.Name}:");
                 Console.WriteLine("APPOINTMENTS:");
 
 				foreach (Appointment appointment in line.Value)
 				{
-					Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.AppointmentTime}");
+					Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.Time}");
 				}
 			}
 		}

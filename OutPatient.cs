@@ -27,7 +27,7 @@ namespace HospitalManagementSys
             {
                 if (appointment.AppointmentDate > DateTime.Now)
                 {
-                    Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.AppointmentTime} | Doctor: {appointment.CurrentDoctor}");
+                    Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.Time} | Doctor: {appointment.CurrentDoctor}");
                 }
             }
 
