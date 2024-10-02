@@ -9,7 +9,7 @@ namespace HospitalManagementSys
         public int PatientID { get; private set; }
         //**********public string Ailement {  get; private set; }
         //**************public Doctor AssignedDoctor { get; private set; }
-        //*************public Room ?AssignedRoom { get; set; }
+        public Room ?AssignedRoom { get; set; }
 
 
 
@@ -20,7 +20,7 @@ namespace HospitalManagementSys
             //*****(, string ailment, Doctor assignedDoctor)
             PatientID = pateintID;
             //*********Ailement = ailment;
-           //***** AssignedDoctor = assignedDoctor;
+            //***** AssignedDoctor = assignedDoctor;
         }
 
 
@@ -32,7 +32,7 @@ namespace HospitalManagementSys
             Console.Write($"\nPatientID: {PatientID}, Patient Name: {Name} ");
         }
 
-        /************
+
         public void AssignRoom(Room room)
         {
             room.OccupyRoom();
@@ -46,6 +46,6 @@ namespace HospitalManagementSys
         }
 
 
-        *************/
+
     }
 }

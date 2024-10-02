@@ -7,21 +7,21 @@ namespace HospitalManagementSys
 	public abstract class Person
 	{
 		public string Name { get; private set; }
-		public int Age { get; private set; }
+		public int Age;
 		
 		public enum Gender { Male, Female, Other}
-        public Gender g { get; private set; }
+        public Gender gender { get; private set; }
 
         public Person(string name, int age ,Gender gender)
         {
 			Name = name;
 			Age = age;
-			g = gender;
+			this.gender = gender;
         }
 
 		public virtual void DisplayInfo()
 		{
-			Console.WriteLine($"Name: {Name}, Age: {Age}, Gender: {g}");
+			Console.WriteLine($"Name: {Name}, Age: {Age}, Gender: {gender}");
 		}
 	}
 }

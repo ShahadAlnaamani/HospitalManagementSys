@@ -10,6 +10,9 @@ namespace HospitalManagementSys
         public Doctor CurrentDoctor { get; private set; }
         public DateTime? AppointmentDate { get; private set; }
         public TimeSpan? AppointmentTime { get; private set; }
+
+        public List<TimeOnly> WorkDay { get; private set; }
+        public TimeOnly WorkEnd { get; private set; }
         public bool IsBooked { get; private set; }
 
 
@@ -18,7 +21,11 @@ namespace HospitalManagementSys
         {
             Patient = patient;
             CurrentDoctor = doctor;
-           // ScheduleAppointment(appointmentDate, appointmentTime);
+            WorkDay = new List<TimeOnly>();
+            WorkDay.Add(TimeOnly.ParseExact("9:00 pm", "h:mm tt"));
+            WorkDay.Add(TimeOnly.ParseExact("11:00 pm", "h:mm tt"));
+            WorkDay.Add(TimeOnly.ParseExact("12:00 pm", "h:mm tt"));
+            // ScheduleAppointment(appointmentDate, appointmentTime);
         }
 
         //Methods 

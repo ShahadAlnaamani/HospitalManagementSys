@@ -8,22 +8,23 @@ namespace HospitalManagementSys
         public Room Room { get; private set; }
         public Doctor AssignedDoctor { get; private set; }
         public DateTime AdmissionDate { get; private set; }
-        public Room ?AssignedRoom { get; set; }
-        public string Ailement {  get; private set; }
+        public Room? AssignedRoom { get; set; }
+        public string Ailment {  get; private set; }
 
 
         //Constructor
-        public InPatient(int pateintID, string name, int age, Gender gender, Room room, Doctor doctor, DateTime date, string ailment) : base(pateintID, name, age, gender)
+        public InPatient(string name, int age, Gender gender, int pateintID, string ailment, Doctor doctor, DateTime date) : base(pateintID, name, age, gender)
         {
-            Room = room;
+            Room = null;
             AssignedDoctor = doctor;
             AdmissionDate = date;
-            Ailement = ailment;
+            Ailment = ailment;
         }
 
         //Method
         public void AssignRoom(Room room)
         {
+            Room = room;
             room.OccupyRoom();
             AssignedRoom = room;
             Console.WriteLine($"<!>Patient {Name} booked room {room.RoomNumber}<!>");
@@ -40,7 +41,7 @@ namespace HospitalManagementSys
         {
             Console.WriteLine();
             base.DisplayInfo();
-            Console.Write($" | Illness: {Ailement} | Doctor: {AssignedDoctor} | Room {AssignedDoctor}\n");
+            Console.Write($" | Illness: {Ailment} | Doctor: {AssignedDoctor} | Room {AssignedDoctor}\n");
         }
     }
 }

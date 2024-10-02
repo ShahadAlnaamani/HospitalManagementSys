@@ -9,7 +9,7 @@ namespace HospitalManagementSys
         //Attributes 
         public int RoomNumber { get; private set; }
         public bool IsOccupied { get; private set; }
-        public enum RoomType {IR, OPR}
+        public enum RoomType {IPR, OPR}
         public RoomType r { get; private set; }
 
 

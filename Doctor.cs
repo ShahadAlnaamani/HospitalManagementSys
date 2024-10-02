@@ -25,7 +25,7 @@ namespace HospitalManagementSys
 
         //Methods 
         public void AssignToClinic(Clinic clinic, DateTime day, TimeSpan period, Doctor doctor)
-        {
+        {;
             double totalTime = period.TotalHours;
             clinic.AddAvailableAppointment(null, doctor, day, period, totalTime);
 

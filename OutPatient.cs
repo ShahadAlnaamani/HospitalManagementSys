@@ -8,11 +8,14 @@ namespace HospitalManagementSys
         //Attributes 
         public Clinic ClinicAssigned { get; private set; }
         public List<Appointment> Appointments { get; private set; }
+        public string Ailment {  get; private set; }
+        
 
         //Constructor
-        public OutPatient(int pateintID, string name, int age, Gender gender, Clinic clinic) : base(pateintID, name, age, gender)
+        public OutPatient(string name, int age, Gender gender, int pateintID, string ailment, Clinic clinic) : base(pateintID, name, age, gender)
         {
             ClinicAssigned = clinic;
+            Ailment = ailment;
         }
 
         //Methods
@@ -28,6 +31,10 @@ namespace HospitalManagementSys
                 }
             }
 
+        }
+        public void BookAppointment(OutPatient patient, Doctor doctor, Clinic clinic, DateTime date, TimeSpan time)
+        {//Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime
+            clinic.BookAppointment(patient, doctor, date, time);
         }
     }
 }

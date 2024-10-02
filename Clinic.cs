@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace HospitalManagementSys
 {
-	public class Clinic : Room
+	public class Clinic
 	{
 		//Attributes 
 		public int ClinicID { get; private set; }
@@ -11,8 +11,8 @@ namespace HospitalManagementSys
         public string ClinicName { get; private set; }
         public double TotalHours { get; private set; }
 
-        public enum Specialization {Cardiology, Neurology, Dermatology }
-        public Specialization s { get; private set; }
+        public enum Specializations {Cardiology, Neurology, Dermatology }
+        public Specializations s { get; private set; }
 
         public List<Room> RoomsList { get; private set; }
 
@@ -21,7 +21,7 @@ namespace HospitalManagementSys
 
 
 		//Constructor 
-		public Clinic(int clinicID, string clinicName, Specialization specialization, Appointment a, int roomNumber, RoomType roomType) : base(roomNumber, roomType)
+		public Clinic(int clinicID, string clinicName, Specializations specialization) 
 		{
 			RoomsList = new List<Room>();
             ClinicID = clinicID;
@@ -47,12 +47,14 @@ namespace HospitalManagementSys
 			if (AvailableAppointments.ContainsKey(doctor))
 			{
 				AvailableAppointments[doctor] = new List<Appointment>() { appointment };
+				Console.WriteLine($"<!>Doctor {doctor.Name} new clinic created {appointment.AppointmentDate}<!>");
 			}
 
 			else 
 			{
                 AvailableAppointments.Add(doctor, new List<Appointment>() {appointment});
-			}
+                Console.WriteLine($"<!>Doctor {doctor.Name} new clinic created {appointment.AppointmentDate}<!>");
+            }
 			
         }
 
