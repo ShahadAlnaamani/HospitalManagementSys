@@ -9,13 +9,14 @@ namespace HospitalManagementSys
 		public int ClinicID { get; private set; }
 
         public string ClinicName { get; private set; }
+        public double TotalHours { get; private set; }
 
         public enum Specialization {Cardiology, Neurology, Dermatology }
         public Specialization s { get; private set; }
 
         public List<Room> RoomsList { get; private set; }
 
-		public Dictionary <Doctor,List<Appointment>> AvailableAppointments { get; private set; }
+		public Dictionary <Doctor,List <Appointment>> AvailableAppointments { get; private set; }
     
 
 
@@ -41,6 +42,18 @@ namespace HospitalManagementSys
 		{
 			Appointment appointment = new Appointment(patient, doctor, appointmentDay, period);
 			appointment.ScheduleAppointment(appointmentDay, period, false);
+			TotalHours = TotalTime;
+
+			if (AvailableAppointments.ContainsKey(doctor))
+			{
+				AvailableAppointments[doctor] = new List<Appointment>() { appointment };
+			}
+
+			else 
+			{
+                AvailableAppointments.Add(doctor, new List<Appointment>() {appointment});
+			}
+			
         }
 
 
