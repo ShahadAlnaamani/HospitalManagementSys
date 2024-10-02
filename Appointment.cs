@@ -23,9 +23,10 @@ namespace HospitalManagementSys
 
         //Methods 
         public void ScheduleAppointment(DateTime appointmentDate, TimeSpan appointmentTime, bool book)
-        {
+        { 
             AppointmentDate = appointmentDate;
             AppointmentTime = appointmentTime;
+            IsBooked = false;//ensures that defualt is false
             if (book) 
             { 
                 IsBooked = true;
