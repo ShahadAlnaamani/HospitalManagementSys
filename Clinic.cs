@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace HospitalManagementSys
 {
@@ -45,7 +46,7 @@ namespace HospitalManagementSys
 
 		public void BookAppointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
         {
-			
+			bool Found = false;
 			foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
 			{ 
 				if (line.Key == doctor)
@@ -55,15 +56,32 @@ namespace HospitalManagementSys
 						if (appointment.AppointmentDate == appointmentDate && appointment.AppointmentTime == appointmentTime)
 						{ 
 							appointment.ScheduleAppointment(appointmentDate, appointmentTime, true);
+							Found = true;
+							AvailableAppointments.Remove(line.Key);
+							Console.WriteLine("<!>Appointment Scheduled<!>");
+							break;
 						}
 					}
 				}
 			}
+
+			if (Found != true)
+			{ Console.WriteLine("<!>Appointment was not found<!>"); }
         }
 
 		public void DisplayAvailableAppointments()
-		{ 
+		{
+			foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
+			{
+				
+                Console.WriteLine($"\n\nD O C T O R - {line.Key}:");
+                Console.WriteLine("APPOINTMENTS:");
 
+				foreach (Appointment appointment in line.Value)
+				{
+					Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.AppointmentTime}");
+				}
+			}
 		}
     }
 }
