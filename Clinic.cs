@@ -2,7 +2,7 @@
 
 namespace HospitalManagementSys
 {
-	public class Clinic
+	public class Clinic : Room
 	{
 		//Attributes 
 		public int ClinicID { get; private set; }
@@ -19,7 +19,7 @@ namespace HospitalManagementSys
 
 
 		//Constructor 
-		public Clinic(int clinicID, string clinicName, Specialization specialization, Appointment a)
+		public Clinic(int clinicID, string clinicName, Specialization specialization, Appointment a, int roomNumber, RoomType roomType) : base(roomNumber, roomType)
 		{
 			RoomsList = new List<Room>();
             ClinicID = clinicID;
@@ -36,18 +36,34 @@ namespace HospitalManagementSys
 			RoomsList.Add(room);
 		}
 
-		public void AddAvailableAppointment(Doctor doctor, DateTime appointmentDay, TimeSpan period, double TotalTime)
+		public void AddAvailableAppointment(Patient patient, Doctor doctor, DateTime appointmentDay, TimeSpan period, double TotalTime)
 		{
-			Appointment appointment;
-			appointment.ScheduleAppointment(appointmentDay, period);
+			Appointment appointment = new Appointment(patient, doctor, appointmentDay, period);
+			appointment.ScheduleAppointment(appointmentDay, period, false);
         }
 
 
 		public void BookAppointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
-		{
-			//remove available appointment 
+        {
+			
+			foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
+			{ 
+				if (line.Key == doctor)
+				{
+					foreach(Appointment appointment in line.Value) 
+					{
+						if (appointment.AppointmentDate == appointmentDate && appointment.AppointmentTime == appointmentTime)
+						{ 
+							appointment.ScheduleAppointment(appointmentDate, appointmentTime, true);
+						}
+					}
+				}
+			}
+        }
 
-			//add update appointment 
+		public void DisplayAvailableAppointments()
+		{ 
+
 		}
     }
 }

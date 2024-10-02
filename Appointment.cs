@@ -18,21 +18,26 @@ namespace HospitalManagementSys
         {
             Patient = patient;
             CurrentDoctor = doctor;
-            ScheduleAppointment(appointmentDate, appointmentTime);
+           // ScheduleAppointment(appointmentDate, appointmentTime);
         }
 
         //Methods 
-        public void ScheduleAppointment(DateTime appointmentDate, TimeSpan appointmentTime)
+        public void ScheduleAppointment(DateTime appointmentDate, TimeSpan appointmentTime, bool book)
         {
             AppointmentDate = appointmentDate;
             AppointmentTime = appointmentTime;
+            if (book) 
+            { 
+                IsBooked = true;
+                Console.WriteLine("<!> Appointment booked<!>");
+            }
+            
             Console.WriteLine($"<!>Appointment scheduled for {appointmentDate} at {appointmentTime}<!>");
         }
 
         public void CancelAppointment()
         {
-            AppointmentDate = null;
-            AppointmentTime = null;
+            IsBooked = false;
             Console.WriteLine($"<!>Appointment for patient {this.Patient.Name} cancelled<!>");
         }
 
