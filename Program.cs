@@ -7,6 +7,42 @@ namespace HospitalManagementSys
     {
         static void Main(string[] args)
         {
+            /*
+            //Creating user interface 
+
+            Console.WriteLine("- - - - -C I T Y   H O S P I T A L- - - - - ");
+            Console.WriteLine("1. Admin \n2. Doctor");
+            Console.Write("\nEnter: ");
+            int Option = 0;
+
+            try 
+            {
+                Option = int.Parse(Console.ReadLine());
+            } catch (Exception e) { Console.WriteLine(e.Message); }
+            
+            switch(Option)
+            {
+                case 1:
+                    //Admin options 
+                    break;
+
+
+                case 2:
+                    //Doctor options
+                    break;
+
+
+                default:
+                    Console.WriteLine("<!>Improper input<!>");
+                    break;
+            }
+            */
+
+
+
+
+
+
             // Create doctors
             Doctor doctor1 = new Doctor(1, "Dr. John Smith", 45, Gender.Male, Doctor.Specialization.Cardiology);
             Doctor doctor2 = new Doctor(2, "Dr. Alice Brown", 38, Gender.Female, Doctor.Specialization.Neurology);
@@ -16,7 +52,7 @@ namespace HospitalManagementSys
             Clinic neurologyClinic = new Clinic(2, "Neurology Clinic", Clinic.Specializations.Neurology);
            
             // Assign doctors to clinics and generate appointment slots (9 AM - 12 PM)
-            doctor1.AssignToClinic(cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(3), doctor1); // Expected: Appointments generated for 9 AM, 10 AM, 11 AM
+            doctor1.AssignToClinic(cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(1), doctor1); // Expected: Appointments generated for 9 AM, 10 AM, 11 AM
             doctor2.AssignToClinic(neurologyClinic, new DateTime(2024, 10, 6), TimeSpan.FromHours(3), doctor2);  // Expected: Appointments generated for 9 AM, 10 AM, 11 AM
 
             // Create rooms for clinics

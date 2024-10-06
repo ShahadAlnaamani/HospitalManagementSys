@@ -37,16 +37,16 @@ namespace HospitalManagementSys
 
             switch (appointmentTime.ToString()) //Assigning appointment 
             {
-                case "1":
+                case "01:00:00":
                     Time = " 9:00 AM ";
                     break;
 
-                case "2":
-                    Time = " 10:00 AM ";
+                case "02:00:00":
+                    Time = " 9:00 AM, 10:00 AM ";
                     break;
 
-                case "3":
-                    Time = " 11:00 PM ";
+                case "03:00:00":
+                    Time = " 9:00 AM, 10:00 AM, 11:00 PM ";
                     break;
 
                 default:
@@ -62,7 +62,7 @@ namespace HospitalManagementSys
                 Console.WriteLine("<!> Appointment booked<!>");
             }
             
-            Console.WriteLine($"<!>Appointment scheduled for {appointmentDate} at {appointmentTime}<!>");
+            Console.WriteLine($"<!>Appointment scheduled for {appointmentDate} at {Time}<!>");
         }
 
         public void CancelAppointment()
