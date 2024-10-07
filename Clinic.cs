@@ -40,8 +40,9 @@ namespace HospitalManagementSys
 
 		public void AddAvailableAppointment(Patient patient, Doctor doctor, DateTime appointmentDay, TimeSpan period ) //double TotalTime
         {
-			Appointment appointment = new Appointment(patient, doctor, appointmentDay, period);
-			appointment.ScheduleAppointment(appointmentDay, period, false);
+			DateOnly date = DateOnly.FromDateTime(appointmentDay);
+            Appointment appointment = new Appointment(patient, doctor, appointmentDay, period);
+			appointment.ScheduleAppointment(date, period, false);
 			//TotalHours = TotalTime;
 
 			if (AvailableAppointments.ContainsKey(doctor))
@@ -53,7 +54,9 @@ namespace HospitalManagementSys
 			else 
 			{
                 AvailableAppointments.Add(doctor, new List<Appointment>() {appointment});
-                Console.WriteLine($"<!>Doctor {doctor.Name} new clinic created {appointment.AppointmentDate}<!>");
+				//DateTime date = appointment.AppointmentDate;
+				//	new DateTime(appointment.AppointmentDate.Year, appointment.AppointmentDate.Month, appointment.AppointmentDate.Year)
+                Console.WriteLine($"<!>{doctor.Name} is assigned to the {ClinicName} for {appointment.AppointmentDate}, {appointment.Time}<!>");
             }
 			
         }
@@ -62,15 +65,16 @@ namespace HospitalManagementSys
 		public void BookAppointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
         {
 			bool Found = false;
+			DateOnly date = DateOnly.FromDateTime(appointmentDate);
 			foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
 			{ 
 				if (line.Key == doctor)
 				{
 					foreach(Appointment appointment in line.Value) 
 					{
-						if (appointment.AppointmentDate == appointmentDate && appointment.AppointmentTime == appointmentTime)
+						if (appointment.AppointmentDate == date && appointment.AppointmentTime == appointmentTime)
 						{ 
-							appointment.ScheduleAppointment(appointmentDate, appointmentTime, true);
+							appointment.ScheduleAppointment(date, appointmentTime, true);
 							Found = true;
 							AvailableAppointments.Remove(line.Key);
 							Console.WriteLine("<!>Appointment Scheduled<!>");

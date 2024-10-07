@@ -25,7 +25,7 @@ namespace HospitalManagementSys
             base.DisplayInfo();
             foreach (Appointment appointment in Appointments)
             {
-                if (appointment.AppointmentDate > DateTime.Now)
+                if (appointment.AppointmentDate > DateOnly.FromDateTime(DateTime.Today))
                 {
                     Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.Time} | Doctor: {appointment.CurrentDoctor}");
                 }

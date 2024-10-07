@@ -8,7 +8,7 @@ namespace HospitalManagementSys
         //Attributes 
         public Patient Patient { get; private set; }
         public Doctor CurrentDoctor { get; private set; }
-        public DateTime? AppointmentDate { get; private set; }
+        public DateOnly? AppointmentDate { get; private set; }
         public TimeSpan? AppointmentTime { get; private set; }
         public List<TimeOnly> WorkDay { get; private set; }
         public TimeOnly WorkEnd { get; private set; }
@@ -30,7 +30,7 @@ namespace HospitalManagementSys
         }
 
         //Methods 
-        public void ScheduleAppointment(DateTime appointmentDate, TimeSpan appointmentTime, bool book)
+        public void ScheduleAppointment(DateOnly appointmentDate, TimeSpan appointmentTime, bool book)
         { 
             AppointmentDate = appointmentDate;
             AppointmentTime = appointmentTime;
@@ -62,7 +62,7 @@ namespace HospitalManagementSys
                 Console.WriteLine("<!> Appointment booked<!>");
             }
             
-            Console.WriteLine($"<!>Appointment scheduled for {appointmentDate} at {Time}<!>");
+            Console.WriteLine($"<!>Appointment scheduled for {AppointmentDate} at {Time}<!>");
         }
 
         public void CancelAppointment()

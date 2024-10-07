@@ -24,11 +24,19 @@ namespace HospitalManagementSys
             {
                 case 1:
                     //Admin options 
+                    Console.Clear();
+                    Console.WriteLine("- - - - -C I T Y   H O S P I T A L- - - - - ");
+                    Console.WriteLine("1. Add new doctor \n2. Assign patient to room \n3.Create patient \n4.Assign patient to room \n5.Book appointment");
+                    Console.Write("\nEnter: ");
                     break;
 
 
                 case 2:
                     //Doctor options
+                    Console.Clear();
+                    Console.WriteLine("- - - - -C I T Y   H O S P I T A L- - - - - ");
+                    Console.WriteLine("1. Add new appointment \n2. Doctor \n3.Assign patient to room");
+                    Console.Write("\nEnter: ");
                     break;
 
 
@@ -36,11 +44,11 @@ namespace HospitalManagementSys
                     Console.WriteLine("<!>Improper input<!>");
                     break;
             }
+            
             */
 
-
-
-
+            Console.WriteLine("T E S T   C A S E S:\n");
+            Console.WriteLine("1. DOCTOR ASSIGNMENT");
 
 
             // Create doctors
