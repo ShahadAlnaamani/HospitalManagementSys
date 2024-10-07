@@ -71,6 +71,25 @@ namespace HospitalManagementSys
         public void CancelAppointment()
         {
             IsBooked = false;
+            switch (Time.ToString()) //Assigning appointment 
+            {
+                case "01:00:00":
+                    WorkDay.Add(TimeOnly.ParseExact("9:00 am", "h:mm tt"));
+                    break;
+
+                case "02:00:00":
+                    WorkDay.Add(TimeOnly.ParseExact("10:00 am", "h:mm tt"));
+                    break;
+
+                case "03:00:00":
+                    WorkDay.Add(TimeOnly.ParseExact("11:00 am", "h:mm tt"));
+                    break;
+
+                default:
+                    Console.WriteLine("<!>Invalid appointment time<!>");
+                    break;
+            }
+           
             Console.WriteLine($"<!>Appointment for patient {this.Patient.Name} cancelled<!>");
         }
 

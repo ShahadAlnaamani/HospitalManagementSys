@@ -2,7 +2,7 @@
 
 namespace HospitalManagementSys
 { 
-    public abstract class Hospital
+    public class Hospital
     {
         //Attributes 
         public List<Patient> PatientsList { get; private set; }

@@ -47,6 +47,8 @@ namespace HospitalManagementSys
             
             */
 
+            Hospital hospital = new Hospital();
+
             Console.WriteLine("\n\nT E S T   C A S E S:\n");
             Console.WriteLine("1. DOCTOR ASSIGNMENT");
             // Create doctors
@@ -77,30 +79,36 @@ namespace HospitalManagementSys
             
             OutPatient outpatient1 = new OutPatient("Mark Doe", 28, Gender.Male, 102, "Migraine", neurologyClinic);
 
-
-            Console.WriteLine("\n\n4. BOOKING APPOINTMENT");
             // Assign room to in-patient
             inpatient1.AssignRoom(room1); // Expected: Room 101 becomes occupied
-                                          // Book an appointment for out-patient in Cardiology Clinic
-            outpatient1.BookAppointment(outpatient1, doctor1, cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(10)); // Expected: Appointment at 10 AM booked
-                                                                                                              // View doctor's assigned clinics
+
+            Console.WriteLine("\n\n4. BOOKING APPOINTMENT");
+            // Book an appointment for out-patient in Cardiology Clinic
+           // outpatient1.BookAppointment(outpatient1, doctor1, cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(10)); // Expected: Appointment at 10 AM booked
+
+            outpatient1.BookAppointment(doctor1, cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(1)); // Expected: Appointment at 10 AM booked
+
+            Console.WriteLine("\n\n5. DOCTOR ASSIGNED CLINICS");
+            // View doctor's assigned clinics
             doctor1.DisplayAssignedClinics(); // Expected: Cardiology Clinic is displayed
-                                              // View available appointments in Cardiology Clinic
+
+            Console.WriteLine("\n\n6. DISPLAY AVAILABLE APPOINTMENTS");
+            // View available appointments in Cardiology Clinic
             cardiologyClinic.DisplayAvailableAppointments();
             // Expected: Show available slots for Dr. John Smith at 9 AM, 11 AM (10 AM is booked)
 
-
+            Console.WriteLine("\n\n7. DISCHARGE PATIENT");
             // Discharge in-patient
             inpatient1.Discharge(); // Expected: Room 101 becomes available, patient discharged
                                     // Book another appointment for the same out-patient in Cardiology Clinic
-            outpatient1.BookAppointment(outpatient1, doctor2, cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(11)); // Expected: Appointment at 11 AM booked
+            outpatient1.BookAppointment(doctor2, cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(2)); // Expected: Appointment at 11 AM booked
                                                                                                               // Try booking a time outside available slots
-            outpatient1.BookAppointment(outpatient1, doctor1, cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(12));
+            outpatient1.BookAppointment(doctor1, cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(3));
             // Expected: No available appointments for this time
 
-
+            Console.WriteLine("\n\n8. APPOINTMENT CANCELLATION");
             // Cancel an appointment
-            cardiologyClinic.BookAppointment(outpatient1, doctor2, new DateTime(2024, 10, 5), TimeSpan.FromHours(10));
+            cardiologyClinic.BookAppointment(outpatient1, doctor2, new DateTime(2024, 10, 5), TimeSpan.FromHours(1));
             // Expected: Appointment cancellation message for 10 AM
 
 

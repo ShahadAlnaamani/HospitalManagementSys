@@ -16,7 +16,7 @@ namespace HospitalManagementSys
         {
             ClinicAssigned = clinic;
             Ailment = ailment;
-            Console.WriteLine($"<!>Patient {name} (Out-Patient) is created and assigned to the {ClinicAssigned.ClinicName}");
+            Console.WriteLine($"<!>Patient {name} (Out-Patient) is created and assigned to the {ClinicAssigned.ClinicName}<!>");
         }
 
         //Methods
@@ -33,9 +33,9 @@ namespace HospitalManagementSys
             }
 
         }
-        public void BookAppointment(OutPatient patient, Doctor doctor, Clinic clinic, DateTime date, TimeSpan time)
-        {//Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime
-            clinic.BookAppointment(patient, doctor, date, time);
+        public void BookAppointment(Doctor doctor, Clinic clinic, DateTime date, TimeSpan time)//OutPatient patient, Doctor doctor, Clinic clinic, DateTime date, TimeSpan time
+        {//cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(10)
+            clinic.BookAppointment(this, doctor, date, time);
         }
     }
 }

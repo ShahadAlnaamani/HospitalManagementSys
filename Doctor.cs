@@ -28,6 +28,7 @@ namespace HospitalManagementSys
         {
             //double totalTime = period.TotalHours;
             day = day.Date;
+            AssignedClinics.Add(clinic);
             clinic.AddAvailableAppointment(null, doctor, day, period); //totalTime
 
         }
@@ -52,14 +53,14 @@ namespace HospitalManagementSys
 
         public void DisplayAssignedClinics()
         {
-            Console.WriteLine("\n- - - - - - - - - - - - - - - - - - - - - -");
+            Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - -");
             Console.WriteLine($"Doctor ID: {DoctorID}, Name: {Name}\n");
             
             foreach (Clinic c in AssignedClinics)
             {
                 Console.WriteLine($"Clinic ID: {c.ClinicID}, Clinic Name: {c.ClinicName}, Clinic Specialization: {c.s}\n");
             }
-            Console.WriteLine("\n- - - - - - - - - - - - - - - - - - - - - -");
+            Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - -");
 
         }
     }

@@ -19,6 +19,7 @@ namespace HospitalManagementSys
             AssignedDoctor = doctor;
             AdmissionDate = date;
             Ailment = ailment;
+            Console.WriteLine($"<!>Patient {Name} (In-Patient) is created<!> ");
         }
 
         //Method
@@ -27,7 +28,7 @@ namespace HospitalManagementSys
             Room = room;
             room.OccupyRoom();
             AssignedRoom = room;
-            Console.WriteLine($"<!>Patient {Name} (In-Patient) is created and assigned room {room.RoomNumber}<!>");
+            Console.WriteLine($"<!>Patient {Name} is assigned room {room.RoomNumber}<!>");
         }
 
         public void Discharge()

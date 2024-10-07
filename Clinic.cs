@@ -67,19 +67,39 @@ namespace HospitalManagementSys
         {
 			bool Found = false;
 			DateOnly date = DateOnly.FromDateTime(appointmentDate);
-			foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
+
+
+            foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
 			{ 
 				if (line.Key == doctor)
 				{
+					
 					foreach(Appointment appointment in line.Value) 
 					{
-						if (appointment.AppointmentDate == date && appointment.AppointmentTime == appointmentTime)
+                        if (appointment.AppointmentDate == date && appointment.AppointmentTime == appointmentTime)
 						{ 
 							appointment.ScheduleAppointment(date, appointmentTime, true);
 							Found = true;
-							AvailableAppointments.Remove(line.Key);
-							Console.WriteLine("<!>Appointment Scheduled<!>");
-							break;
+							TimeOnly time = TimeOnly.ParseExact("0:00 am", "h:mm tt");
+
+							if (appointmentTime.ToString() == "01:00:00")
+							{ time = (TimeOnly.ParseExact("9:00 am", "h:mm tt")); }
+
+							else if (appointmentTime.ToString() == "02:00:00")
+							{ time = (TimeOnly.ParseExact("10:00 am", "h:mm tt")); }
+
+							else if (appointmentTime.ToString() == "03:00:00")
+							{ time = (TimeOnly.ParseExact("11:00 am", "h:mm tt")); }
+
+							if (time != TimeOnly.ParseExact("0:00 am", "h:mm tt"))
+							{
+								appointment.WorkDay.Remove(time);
+								//AvailableAppointments.Remove(line.Key); //remove only the specific hour 
+								Console.WriteLine($"<!>Appointment Scheduled for patient {patient.Name} with {doctor.Name} at {appointmentTime}<!>");
+								break;
+							}
+
+							else { Console.WriteLine("<!>Improper time<!>"); }
 						}
 					}
 				}
@@ -99,7 +119,10 @@ namespace HospitalManagementSys
 
 				foreach (Appointment appointment in line.Value)
 				{
-					Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.Time}");
+					if (appointment.WorkDay != null)
+					{
+						Console.WriteLine($"Doctor: {appointment.CurrentDoctor} | Date: {appointment.AppointmentDate} | Time: {appointment.WorkDay}");
+					}
 				}
 			}
 		}
