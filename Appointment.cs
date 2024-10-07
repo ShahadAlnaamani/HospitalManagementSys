@@ -56,13 +56,16 @@ namespace HospitalManagementSys
 
             
             IsBooked = false;//ensures that defualt is false
-            if (book) 
-            { 
+            if (book)
+            {
                 IsBooked = true;
-                Console.WriteLine("<!> Appointment booked<!>");
+                Console.WriteLine($"<!>Appointment class: apt scheduled for {AppointmentDate} at {Time}<!>");
             }
-            
-            Console.WriteLine($"<!>Appointment scheduled for {AppointmentDate} at {Time}<!>");
+
+            else
+            {
+                Console.WriteLine($"<!>Appointment class: apt slots added for {AppointmentDate} at {Time}<!>");
+            }
         }
 
         public void CancelAppointment()

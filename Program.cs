@@ -47,10 +47,8 @@ namespace HospitalManagementSys
             
             */
 
-            Console.WriteLine("T E S T   C A S E S:\n");
+            Console.WriteLine("\n\nT E S T   C A S E S:\n");
             Console.WriteLine("1. DOCTOR ASSIGNMENT");
-
-
             // Create doctors
             Doctor doctor1 = new Doctor(1, "Dr. John Smith", 45, Gender.Male, Doctor.Specialization.Cardiology);
             Doctor doctor2 = new Doctor(2, "Dr. Alice Brown", 38, Gender.Female, Doctor.Specialization.Neurology);
@@ -63,19 +61,24 @@ namespace HospitalManagementSys
             doctor1.AssignToClinic(cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(1), doctor1); // Expected: Appointments generated for 9 AM, 10 AM, 11 AM
             doctor2.AssignToClinic(neurologyClinic, new DateTime(2024, 10, 6), TimeSpan.FromHours(3), doctor2);  // Expected: Appointments generated for 9 AM, 10 AM, 11 AM
 
+
+
+            Console.WriteLine("\n2. ROOM ASSIGNMENT");
             // Create rooms for clinics
             Room room1 = new Room(101, RoomType.IPR);  // Room for in-patients
             Room room2 = new Room(102, RoomType.OPR);  // Room for out-patients
             cardiologyClinic.AddRoom(room1); // Expected: Room 101 added to Cardiology Clinic
             neurologyClinic.AddRoom(room2);  // Expected: Room 102 added to Neurology Clinic
-            
+
+
+            Console.WriteLine("\n\n3. PATIENT CREATION AND ASSIGNMENT");
             // Create patients
             InPatient inpatient1 = new InPatient("Jane Doe", 30, Gender.Female, 101, "Cardiac Arrest", doctor1, DateTime.Now);
             
             OutPatient outpatient1 = new OutPatient("Mark Doe", 28, Gender.Male, 102, "Migraine", neurologyClinic);
-            
 
 
+            Console.WriteLine("\n\n4. BOOKING APPOINTMENT");
             // Assign room to in-patient
             inpatient1.AssignRoom(room1); // Expected: Room 101 becomes occupied
                                           // Book an appointment for out-patient in Cardiology Clinic

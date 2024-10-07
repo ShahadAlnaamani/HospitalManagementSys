@@ -36,6 +36,7 @@ namespace HospitalManagementSys
         public void AddRoom(Room room) 
 		{
 			RoomsList.Add(room);
+			Console.WriteLine($"<!>Room {room.RoomNumber} (Room type {room.r}) is added to the {ClinicName} ");
 		}
 
 		public void AddAvailableAppointment(Patient patient, Doctor doctor, DateTime appointmentDay, TimeSpan period ) //double TotalTime
@@ -56,7 +57,7 @@ namespace HospitalManagementSys
                 AvailableAppointments.Add(doctor, new List<Appointment>() {appointment});
 				//DateTime date = appointment.AppointmentDate;
 				//	new DateTime(appointment.AppointmentDate.Year, appointment.AppointmentDate.Month, appointment.AppointmentDate.Year)
-                Console.WriteLine($"<!>{doctor.Name} is assigned to the {ClinicName} for {appointment.AppointmentDate}, {appointment.Time}<!>");
+                Console.WriteLine($"<!>{doctor.Name} is assigned to the {ClinicName} for {appointment.AppointmentDate}, {appointment.Time}<!>\n");
             }
 			
         }

@@ -9,7 +9,7 @@ namespace HospitalManagementSys
         //Attributes 
         public int RoomNumber { get; private set; }
         public bool IsOccupied { get; private set; }
-        public enum RoomType {IPR, OPR}
+        public enum RoomType {IPR, OPR} 
         public RoomType r { get; private set; }
 
 
@@ -34,7 +34,7 @@ namespace HospitalManagementSys
             else
             {
                 IsOccupied = true;
-                Console.WriteLine($"<!>Room {RoomNumber} booked<!>");
+                Console.WriteLine($"<!>Room class: Room {RoomNumber} booked<!>");
             }
         }
 

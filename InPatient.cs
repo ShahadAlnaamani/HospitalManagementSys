@@ -27,7 +27,7 @@ namespace HospitalManagementSys
             Room = room;
             room.OccupyRoom();
             AssignedRoom = room;
-            Console.WriteLine($"<!>Patient {Name} booked room {room.RoomNumber}<!>");
+            Console.WriteLine($"<!>Patient {Name} (In-Patient) is created and assigned room {room.RoomNumber}<!>");
         }
 
         public void Discharge()

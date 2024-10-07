@@ -16,6 +16,7 @@ namespace HospitalManagementSys
         {
             ClinicAssigned = clinic;
             Ailment = ailment;
+            Console.WriteLine($"<!>Patient {name} (Out-Patient) is created and assigned to the {ClinicAssigned.ClinicName}");
         }
 
         //Methods
