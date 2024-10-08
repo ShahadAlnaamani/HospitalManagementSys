@@ -38,11 +38,6 @@ namespace HospitalManagementSys
             Console.WriteLine($"<!>Patient {patient} added<!>");
         }
 
-        public void Discharge(Patient patient)
-        {
-            PatientsList.Remove(patient);
-            Console.WriteLine($"<!>Patient {patient} removed<!>");
-        }
 
         public override void IDisplayInfo()
         {
@@ -64,34 +59,33 @@ namespace HospitalManagementSys
 
         }
 
-        public void ScheduleFollowUp()
+        public void ScheduleFollowUp(Doctor doctor, DateTime day, DateTime date, TimeSpan time, Patient patient)
         {
             Console.WriteLine("<!>Scheduling follow up :)<!>");
-            /*
-            Console.WriteLine("Would you like to book an appointment?");
-            Console.WriteLine("1. yes / 2. no");
-            Console.Write("Enter: ");
-            int option = int.Parse(Console.ReadLine());
-
-            if (option == 1)
-            { 
-                Appointment appointment = new Appointment();
-                Console.WriteLine("Input date");
-                Console.Write("Enter: ");
-                DateOnly date = new DateOnly(DateOnly.ParseExact(Console.ReadLine());
-
-                Console.WriteLine("Input time");
-                Console.Write("Enter: ");
-                TimeSpan time = TimeSpan.ParseExact(Console.ReadLine());
-                appointment.ScheduleEvent(date, time, true); }
-
-            else
-            { Console.WriteLine("Leaving..."); }*/
+            Appointment appointment = new Appointment(patient, this, day, time, null);
+            appointment.ScheduleEvent(patient, doctor, date, time, true);
         }
 
         public void PatientCare()
         {
             Console.WriteLine("<!>Caring for patient :)<!>");
+        }
+
+        public void Discharge(Patient patient)
+        {
+            patient.Discharge();
+        }
+
+        public void ScheduleEvent(Patient patient, Doctor doctor, DateTime date, TimeSpan time)
+        {
+            Appointment appointment = new Appointment(patient, doctor, date, time, null);
+
+        }
+
+        public void CancelEvent(Appointment appointment)
+        {
+            appointment.CancelEvent(appointment);
+            Console.WriteLine("Doctor cancelled appointment");
         }
     }
 }

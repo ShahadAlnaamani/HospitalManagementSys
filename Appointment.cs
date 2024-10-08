@@ -9,7 +9,7 @@ namespace HospitalManagementSys
         public Patient Patient { get; private set; }
         public Doctor CurrentDoctor { get; private set; }
         public Nurse? AssistingNurse { get; private set; }
-        public DateOnly? AppointmentDate { get; private set; }
+        public DateTime? AppointmentDate { get; private set; }
         public TimeSpan? AppointmentTime { get; private set; }
         public List<TimeOnly> WorkDay { get; private set; }
         public TimeOnly WorkEnd { get; private set; }
@@ -31,7 +31,7 @@ namespace HospitalManagementSys
         }
 
         //Methods 
-        public void ScheduleEvent(DateOnly appointmentDate, TimeSpan appointmentTime, bool book)
+        public void ScheduleEvent(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime, bool book)
         { 
             AppointmentDate = appointmentDate;
             AppointmentTime = appointmentTime;
@@ -69,7 +69,7 @@ namespace HospitalManagementSys
             }
         }
 
-        public void CancelEvent()
+        public void CancelEvent(Appointment appointment)
         {
             IsBooked = false;
             switch (Time.ToString()) //Assigning appointment 
@@ -90,7 +90,7 @@ namespace HospitalManagementSys
                     Console.WriteLine("<!>Invalid appointment time<!>");
                     break;
             }
-           
+            appointment.CancelEvent(this);
             Console.WriteLine($"<!>Appointment for patient {this.Patient.Name} cancelled<!>");
         }
 

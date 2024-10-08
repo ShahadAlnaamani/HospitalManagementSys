@@ -44,8 +44,8 @@ namespace HospitalManagementSys
 		public void AddAvailableAppointment(Patient patient, Doctor doctor, DateTime appointmentDay, TimeSpan period ) //double TotalTime
         {
 			DateOnly date = DateOnly.FromDateTime(appointmentDay);
-            Appointment appointment = new Appointment(patient, doctor, appointmentDay, period);
-			appointment.ScheduleEvent(date, period, false);
+            Appointment appointment = new Appointment(patient, doctor, appointmentDay, period, null);
+			appointment.ScheduleEvent(patient, doctor, appointmentDay, period, false);
 			//TotalHours = TotalTime;
 
 			if (AvailableAppointments.ContainsKey(doctor))
@@ -65,7 +65,7 @@ namespace HospitalManagementSys
         }
 
 
-		public void ScheduleEvent(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
+		public void ScheduleEvent(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime, bool book)
         {
 			bool Found = false;
 			DateOnly date = DateOnly.FromDateTime(appointmentDate);
@@ -78,7 +78,7 @@ namespace HospitalManagementSys
 					
 					foreach(Appointment appointment in line.Value) 
 					{
-                        if (appointment.AppointmentDate == date && appointment.AppointmentTime == appointmentTime)
+                        if (DateOnly.Parse(appointment.AppointmentDate) == date && appointment.AppointmentTime == appointmentTime)
 						{ 
 							appointment.ScheduleEvent(date, appointmentTime, true);
 							Found = true;
@@ -131,7 +131,7 @@ namespace HospitalManagementSys
 
 		public void CancelEvent(Appointment appointment)
 		{
-			appointment.CancelEvent();
+			appointment.CancelEvent(appointment);
 		}
     }
 }

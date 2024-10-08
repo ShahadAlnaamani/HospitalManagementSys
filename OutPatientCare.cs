@@ -4,6 +4,6 @@ namespace HospitalManagementSys
 {
     public interface IOutPatientCare : IPatientCare
     {
-        public void ScheduleFollowUp();
+        public void ScheduleFollowUp(DateTime day, DateOnly date, TimeSpan time, Patient patient);
     }
 }
