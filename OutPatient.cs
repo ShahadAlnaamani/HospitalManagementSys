@@ -20,10 +20,10 @@ namespace HospitalManagementSys
         }
 
         //Methods
-        public override void DisplayInfo()
+        public override void IDisplayInfo()
         {
             Console.WriteLine();
-            base.DisplayInfo();
+            base.IDisplayInfo();
             foreach (Appointment appointment in Appointments)
             {
                 if (appointment.AppointmentDate > DateOnly.FromDateTime(DateTime.Today))

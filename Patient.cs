@@ -25,10 +25,10 @@ namespace HospitalManagementSys
 
 
         //Methods
-        public override void DisplayInfo()
+        public override void IDisplayInfo()
         {
             Console.WriteLine();
-            base.DisplayInfo();
+            base.IDisplayInfo();
             Console.Write($"\nPatientID: {PatientID}, Patient Name: {Name} ");
         }
 

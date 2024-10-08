@@ -94,7 +94,7 @@ namespace HospitalManagementSys
 
             Console.WriteLine("\n\n6. DISPLAY AVAILABLE APPOINTMENTS");
             // View available appointments in Cardiology Clinic
-            cardiologyClinic.DisplayAvailableAppointments();
+            cardiologyClinic.IDisplayInfo();
             // Expected: Show available slots for Dr. John Smith at 9 AM, 11 AM (10 AM is booked)
 
             Console.WriteLine("\n\n7. DISCHARGE PATIENT");
@@ -113,7 +113,7 @@ namespace HospitalManagementSys
 
 
             // View available appointments after booking and cancellation
-            cardiologyClinic.DisplayAvailableAppointments();
+            cardiologyClinic.IDisplayInfo();
             // Expected: 10 AM slot available again, 9 AM and 11 AM booked
         }
     }

@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace HospitalManagementSys
 {
-    public class Room : IRoomManagement
+    public class Room : IRoomManagement, IDisplayInformation
     {
         //Attributes 
         public int RoomNumber { get; private set; }
@@ -60,7 +60,7 @@ namespace HospitalManagementSys
             }
         }
 
-        public virtual void DisplayRoomInfo()
+        public virtual void IDisplayInfo()
         {
             Console.WriteLine($"Room Number: {RoomNumber} | Room Type: {r} | Is occupied: {IsOccupied}");
         }

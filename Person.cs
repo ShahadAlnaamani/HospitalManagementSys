@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace HospitalManagementSys
 {
-	public abstract class Person
+	public abstract class Person : IDisplayInformation
 	{
 		public string Name { get; private set; }
 		public int Age;
@@ -19,7 +19,7 @@ namespace HospitalManagementSys
 			this.gender = gender;
         }
 
-		public virtual void DisplayInfo()
+		public virtual void IDisplayInfo()
 		{
 			Console.WriteLine($"Name: {Name}, Age: {Age}, Gender: {gender}");
 		}

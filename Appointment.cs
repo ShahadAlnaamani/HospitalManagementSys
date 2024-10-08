@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace HospitalManagementSys
 {
-    public class Appointment
+    public class Appointment : IDisplayInformation
     {
         //Attributes 
         public Patient Patient { get; private set; }
@@ -93,7 +93,7 @@ namespace HospitalManagementSys
             Console.WriteLine($"<!>Appointment for patient {this.Patient.Name} cancelled<!>");
         }
 
-        public void GetAppointmentDetails()
+        public void IDisplayInfo()
         {
             Console.WriteLine($"Patient Name: {Patient.Name} | Date: {AppointmentDate} | Time: {Time}");
         }

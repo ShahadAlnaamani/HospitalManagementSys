@@ -38,11 +38,11 @@ namespace HospitalManagementSys
             AssignedRoom = null;
         }
 
-        public override void DisplayInfo()
+        public override void IDisplayInfo()
         {
             Console.WriteLine();
-            base.DisplayInfo();
-            Console.Write($" | Illness: {Ailment} | Doctor: {AssignedDoctor} | Room {AssignedDoctor}\n");
+            base.IDisplayInfo();
+            Console.Write($" | Illness: {Ailment} | Doctor: {AssignedDoctor.Name} | Room {AssignedRoom.RoomNumber}\n");
         }
     }
 }

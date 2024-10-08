@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace HospitalManagementSys
 {
-	public class Clinic
+	public class Clinic : IDisplayInformation
 	{
 		//Attributes 
 		public int ClinicID { get; private set; }
@@ -95,7 +95,7 @@ namespace HospitalManagementSys
 							{
 								appointment.WorkDay.Remove(time);
 								//AvailableAppointments.Remove(line.Key); //remove only the specific hour 
-								Console.WriteLine($"<!>Appointment Scheduled for patient {patient.Name} with {doctor.Name} at {appointmentTime}<!>");
+								Console.WriteLine($"<!>Appointment Scheduled for patient {patient.Name} with {doctor.Name} at {appointment.Time}<!>");
 								break;
 							}
 
@@ -109,7 +109,7 @@ namespace HospitalManagementSys
 			{ Console.WriteLine("<!>Appointment was not found<!>"); }
         }
 
-		public void DisplayAvailableAppointments()
+		public void IDisplayInfo()
 		{
 			foreach (KeyValuePair<Doctor, List<Appointment>> line in AvailableAppointments)
 			{
@@ -121,7 +121,7 @@ namespace HospitalManagementSys
 				{
 					if (appointment.WorkDay != null)
 					{
-						Console.WriteLine($"Doctor: {appointment.CurrentDoctor} | Date: {appointment.AppointmentDate} | Time: {appointment.WorkDay}");
+						Console.WriteLine($"Doctor: {appointment.CurrentDoctor.Name} | Date: {appointment.AppointmentDate} | Time: {appointment.Time}");
 					}
 				}
 			}

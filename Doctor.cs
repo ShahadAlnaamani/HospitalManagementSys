@@ -44,10 +44,10 @@ namespace HospitalManagementSys
             Console.WriteLine($"<!>Patient {patient} removed<!>");
         }
 
-        public override void DisplayInfo()
+        public override void IDisplayInfo()
         {
             Console.WriteLine();
-            base.DisplayInfo();
+            base.IDisplayInfo();
             Console.WriteLine($"Doctor ID: {DoctorID}, Specialization: {s}\n");
         }
 
