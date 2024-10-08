@@ -4,6 +4,6 @@ namespace HospitalManagementSys
 {
     public interface IDisplayInformation
     {
-        public void IDisplayInfo();
+        void IDisplayInfo();
     }
 }

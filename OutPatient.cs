@@ -35,7 +35,7 @@ namespace HospitalManagementSys
         }
         public void BookAppointment(Doctor doctor, Clinic clinic, DateTime date, TimeSpan time)//OutPatient patient, Doctor doctor, Clinic clinic, DateTime date, TimeSpan time
         {//cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(10)
-            clinic.BookAppointment(this, doctor, date, time);
+            clinic.ScheduleEvent(this, doctor, date, time);
         }
     }
 }

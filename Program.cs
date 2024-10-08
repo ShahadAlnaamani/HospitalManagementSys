@@ -108,7 +108,7 @@ namespace HospitalManagementSys
 
             Console.WriteLine("\n\n8. APPOINTMENT CANCELLATION");
             // Cancel an appointment
-            cardiologyClinic.BookAppointment(outpatient1, doctor2, new DateTime(2024, 10, 5), TimeSpan.FromHours(1));
+            cardiologyClinic.ScheduleEvent(outpatient1, doctor2, new DateTime(2024, 10, 5), TimeSpan.FromHours(1));
             // Expected: Appointment cancellation message for 10 AM
 
 

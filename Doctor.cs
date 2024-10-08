@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace HospitalManagementSys
 {
-    public class Doctor : Person
+    public class Doctor : Person, IDisplayInformation, IInPatientCare, IOutPatientCare, ISchedulable
     {
         //Attributes
         public int DoctorID { get; private set; }
@@ -18,7 +18,7 @@ namespace HospitalManagementSys
         public Doctor(int doctorID, string name, int age, Gender gender, Specialization specialization) : base(name, age, gender)
         {
             DoctorID = doctorID;
-            s = specialization;    
+            s = specialization;
             PatientsList = new List<Patient>();
             AssignedClinics = new List<Clinic>();
         }
@@ -32,13 +32,13 @@ namespace HospitalManagementSys
             clinic.AddAvailableAppointment(null, doctor, day, period); //totalTime
 
         }
-        public void AddPatient(Patient patient)
-        { 
+        public void AssignRoom(Patient patient)
+        {
             PatientsList.Add(patient);
-            Console.WriteLine($"<!>Patient {patient} added<!>");    
+            Console.WriteLine($"<!>Patient {patient} added<!>");
         }
 
-        public void RemovePatient(Patient patient)
+        public void Discharge(Patient patient)
         {
             PatientsList.Remove(patient);
             Console.WriteLine($"<!>Patient {patient} removed<!>");
@@ -55,13 +55,43 @@ namespace HospitalManagementSys
         {
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - -");
             Console.WriteLine($"Doctor ID: {DoctorID}, Name: {Name}\n");
-            
+
             foreach (Clinic c in AssignedClinics)
             {
                 Console.WriteLine($"Clinic ID: {c.ClinicID}, Clinic Name: {c.ClinicName}, Clinic Specialization: {c.s}\n");
             }
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - -");
 
+        }
+
+        public void ScheduleFollowUp()
+        {
+            Console.WriteLine("<!>Scheduling follow up :)<!>");
+            /*
+            Console.WriteLine("Would you like to book an appointment?");
+            Console.WriteLine("1. yes / 2. no");
+            Console.Write("Enter: ");
+            int option = int.Parse(Console.ReadLine());
+
+            if (option == 1)
+            { 
+                Appointment appointment = new Appointment();
+                Console.WriteLine("Input date");
+                Console.Write("Enter: ");
+                DateOnly date = new DateOnly(DateOnly.ParseExact(Console.ReadLine());
+
+                Console.WriteLine("Input time");
+                Console.Write("Enter: ");
+                TimeSpan time = TimeSpan.ParseExact(Console.ReadLine());
+                appointment.ScheduleEvent(date, time, true); }
+
+            else
+            { Console.WriteLine("Leaving..."); }*/
+        }
+
+        public void PatientCare()
+        {
+            Console.WriteLine("<!>Caring for patient :)<!>");
         }
     }
 }

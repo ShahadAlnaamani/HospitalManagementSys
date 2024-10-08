@@ -2,6 +2,8 @@
 
 namespace HospitalManagementSys
 {
+
+
 	public class InPatient : Patient
 	{
         //Attributes 

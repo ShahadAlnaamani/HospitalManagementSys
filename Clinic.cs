@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace HospitalManagementSys
 {
-	public class Clinic : IDisplayInformation
+	public class Clinic : IDisplayInformation, ISchedulable
 	{
 		//Attributes 
 		public int ClinicID { get; private set; }
@@ -15,8 +15,9 @@ namespace HospitalManagementSys
         public Specializations s { get; private set; }
 
         public List<Room> RoomsList { get; private set; }
+        public List<Nurse> Nurses { get; private set; }
 
-		public Dictionary <Doctor,List <Appointment>> AvailableAppointments { get; private set; }
+        public Dictionary <Doctor,List <Appointment>> AvailableAppointments { get; private set; }
     
 
 
@@ -26,13 +27,14 @@ namespace HospitalManagementSys
 			RoomsList = new List<Room>();
             ClinicID = clinicID;
 			ClinicName = clinicName;
-			s = specialization;
-			AvailableAppointments = new Dictionary<Doctor, List<Appointment>>();	
+			s = specialization;	
+			AvailableAppointments = new Dictionary<Doctor, List<Appointment>>();
+			Nurses = new List<Nurse>();	
 
         }
 
 
-        //Methods
+		//Methods
         public void AddRoom(Room room) 
 		{
 			RoomsList.Add(room);
@@ -43,7 +45,7 @@ namespace HospitalManagementSys
         {
 			DateOnly date = DateOnly.FromDateTime(appointmentDay);
             Appointment appointment = new Appointment(patient, doctor, appointmentDay, period);
-			appointment.ScheduleAppointment(date, period, false);
+			appointment.ScheduleEvent(date, period, false);
 			//TotalHours = TotalTime;
 
 			if (AvailableAppointments.ContainsKey(doctor))
@@ -63,7 +65,7 @@ namespace HospitalManagementSys
         }
 
 
-		public void BookAppointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
+		public void ScheduleEvent(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
         {
 			bool Found = false;
 			DateOnly date = DateOnly.FromDateTime(appointmentDate);
@@ -78,7 +80,7 @@ namespace HospitalManagementSys
 					{
                         if (appointment.AppointmentDate == date && appointment.AppointmentTime == appointmentTime)
 						{ 
-							appointment.ScheduleAppointment(date, appointmentTime, true);
+							appointment.ScheduleEvent(date, appointmentTime, true);
 							Found = true;
 							TimeOnly time = TimeOnly.ParseExact("0:00 am", "h:mm tt");
 
@@ -125,6 +127,11 @@ namespace HospitalManagementSys
 					}
 				}
 			}
+		}
+
+		public void CancelEvent(Appointment appointment)
+		{
+			appointment.CancelEvent();
 		}
     }
 }

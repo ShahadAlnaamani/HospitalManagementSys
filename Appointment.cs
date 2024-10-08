@@ -3,11 +3,12 @@ using System.Globalization;
 
 namespace HospitalManagementSys
 {
-    public class Appointment : IDisplayInformation
+    public class Appointment : IDisplayInformation, ISchedulable
     {
         //Attributes 
         public Patient Patient { get; private set; }
         public Doctor CurrentDoctor { get; private set; }
+        public Nurse? AssistingNurse { get; private set; }
         public DateOnly? AppointmentDate { get; private set; }
         public TimeSpan? AppointmentTime { get; private set; }
         public List<TimeOnly> WorkDay { get; private set; }
@@ -18,7 +19,7 @@ namespace HospitalManagementSys
 
 
         //Constructor
-        public Appointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime)
+        public Appointment(Patient patient, Doctor doctor, DateTime appointmentDate, TimeSpan appointmentTime, Nurse? assistingNurse)
         {
             Patient = patient;
             CurrentDoctor = doctor;
@@ -30,7 +31,7 @@ namespace HospitalManagementSys
         }
 
         //Methods 
-        public void ScheduleAppointment(DateOnly appointmentDate, TimeSpan appointmentTime, bool book)
+        public void ScheduleEvent(DateOnly appointmentDate, TimeSpan appointmentTime, bool book)
         { 
             AppointmentDate = appointmentDate;
             AppointmentTime = appointmentTime;
@@ -68,7 +69,7 @@ namespace HospitalManagementSys
             }
         }
 
-        public void CancelAppointment()
+        public void CancelEvent()
         {
             IsBooked = false;
             switch (Time.ToString()) //Assigning appointment 
@@ -96,6 +97,11 @@ namespace HospitalManagementSys
         public void IDisplayInfo()
         {
             Console.WriteLine($"Patient Name: {Patient.Name} | Date: {AppointmentDate} | Time: {Time}");
+        }
+
+        public void AddAssistingNurse(Nurse nurse)
+        {
+            AssistingNurse = nurse;
         }
     }
 }
