@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace HospitalManagementSys
 {
-    public class Room
+    public class Room : IRoomManagement
     {
         //Attributes 
         public int RoomNumber { get; private set; }
@@ -23,6 +23,14 @@ namespace HospitalManagementSys
 
 
         //Methods 
+        public void CheckRoomOccupancy()
+        {
+            if (IsOccupied == true)
+            { Console.WriteLine($"<!>Room {RoomNumber} is occupied <!>"); }
+            
+            else
+            { Console.WriteLine($"<!>Room {RoomNumber} is available <!>"); }
+        }
 
         public void OccupyRoom()
         {
