@@ -23,7 +23,7 @@ namespace HospitalManagementSys
             AssignedClinics = new List<Clinic>();
         }
 
-        //Methods 
+        //Methods  
         public void AssignToClinic(Clinic clinic, DateTime day, TimeSpan period, Doctor doctor)
         {
             //double totalTime = period.TotalHours;
@@ -59,11 +59,11 @@ namespace HospitalManagementSys
 
         }
 
-        public void ScheduleFollowUp(Doctor doctor, DateTime day, DateTime date, TimeSpan time, Patient patient)
+        public void ScheduleFollowUp( DateTime day, DateOnly date, TimeSpan time, Patient patient)
         {
             Console.WriteLine("<!>Scheduling follow up :)<!>");
             Appointment appointment = new Appointment(patient, this, day, time, null);
-            appointment.ScheduleEvent(patient, doctor, date, time, true);
+            appointment.ScheduleEvent(patient, this, day, time, true);
         }
 
         public void PatientCare()
@@ -76,7 +76,7 @@ namespace HospitalManagementSys
             patient.Discharge();
         }
 
-        public void ScheduleEvent(Patient patient, Doctor doctor, DateTime date, TimeSpan time)
+        public void ScheduleEvent(Patient patient, Doctor doctor, DateTime date, TimeSpan time, bool book)
         {
             Appointment appointment = new Appointment(patient, doctor, date, time, null);
 

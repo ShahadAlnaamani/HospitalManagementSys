@@ -26,7 +26,7 @@ namespace HospitalManagementSys
             base.IDisplayInfo();
             foreach (Appointment appointment in Appointments)
             {
-                if (appointment.AppointmentDate > DateOnly.FromDateTime(DateTime.Today))
+                if (appointment.AppointmentDate > DateTime.Today)
                 {
                     Console.WriteLine($"Date: {appointment.AppointmentDate} | Time: {appointment.Time} | Doctor: {appointment.CurrentDoctor}");
                 }
@@ -35,7 +35,7 @@ namespace HospitalManagementSys
         }
         public void BookAppointment(Doctor doctor, Clinic clinic, DateTime date, TimeSpan time)//OutPatient patient, Doctor doctor, Clinic clinic, DateTime date, TimeSpan time
         {//cardiologyClinic, new DateTime(2024, 10, 5), TimeSpan.FromHours(10)
-            clinic.ScheduleEvent(this, doctor, date, time);
+            clinic.ScheduleEvent(this, doctor, date, time, true);
         }
     }
 }

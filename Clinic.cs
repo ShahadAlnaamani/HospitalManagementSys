@@ -78,9 +78,9 @@ namespace HospitalManagementSys
 					
 					foreach(Appointment appointment in line.Value) 
 					{
-                        if (DateOnly.Parse(appointment.AppointmentDate) == date && appointment.AppointmentTime == appointmentTime)
+                        if (appointment.AppointmentDate == appointmentDate && appointment.AppointmentTime == appointmentTime)
 						{ 
-							appointment.ScheduleEvent(date, appointmentTime, true);
+							appointment.ScheduleEvent(patient, doctor, appointmentDate, appointmentTime, true);
 							Found = true;
 							TimeOnly time = TimeOnly.ParseExact("0:00 am", "h:mm tt");
 
